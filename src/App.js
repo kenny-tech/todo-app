@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
+import uuid from 'uuid/v4';
 
 const initialTodos = [
   {
-    id: 'a',
+    id: uuid(),
     task: 'Learn Javascript',
     complete: true,
   },
   {
-    id: 'b',
+    id: uuid(),
     task: 'Learn React',
     complete: true,
   },
   {
-    id: 'c',
+    id: uuid(),
     task: 'Learn Redux',
     complete: false,
   }
@@ -30,7 +31,7 @@ const App = () => {
     // alert(task);
     if (task) {
       // add new todo item
-      setTodos(todos.concat({ id: 'd', task, complete: false }));
+      setTodos(todos.concat({ id: uuid(), task, complete: false }));
     }
     // makes the input field's value empty again after submitting the new todo item
     setTask('');
