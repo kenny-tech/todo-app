@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const initialTodos = [
   {
@@ -19,6 +19,12 @@ const initialTodos = [
 ]
 
 const App = () => {
+  const [task, setTask] = useState('');
+
+  const handleChangeInput = (event) => {
+    setTask(event.target.value);
+  }
+
   return (   
     <div>
       <ul>
@@ -28,6 +34,8 @@ const App = () => {
           </li>
         ))}
       </ul>
+
+      <input type="text" value={task} onChange={handleChangeInput} />
     </div>  
   );
 }
